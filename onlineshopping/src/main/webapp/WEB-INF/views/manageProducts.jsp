@@ -75,6 +75,7 @@
        <label class="control-label col-md-4" for="file">Select an Image: </label>
        <div class="col-md-8">
         <sf:input type="file" path="file" id="file" class="form-control"/>
+        <sf:errors path="file" cssClass="help-block" element="em"/>
        </div>
       </div> 
 
