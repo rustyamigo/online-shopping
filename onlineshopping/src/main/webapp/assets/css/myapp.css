@@ -94,3 +94,59 @@ footer {
 	color: #ff0000;
 }
 
+.adminDataTableImg {
+	height:50px;
+	width: 50px;
+}
+
+/*Toggle Switch*/
+.switch {
+    width: 50px;
+    height: 30px;
+    position:relative;
+    display: inline-block;
+}
+
+.switch input {
+    display:none;
+}
+
+.slider {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 30px;
+    transition: .5s;
+}
+
+
+.slider:before {
+    position:absolute;
+    background-color: #fff;
+    height: 20px;
+    width:20px;
+    content: "";
+    left: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+input:checked + .slider {
+    background-color: #1863E6;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+
+
+
+
+
+
