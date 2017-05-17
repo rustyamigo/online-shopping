@@ -1,13 +1,25 @@
 package net.kzn.shoppingbackend.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Cart {
 	
 	/*
 	 * private fields
 	 * */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(name = "user_id")
 	private int userId;
+	@Column(name = "grand_total")	
 	private double grandTotal;
+	@Column(name = "cart_lines")
 	private int cartLines;
 	
 	/*

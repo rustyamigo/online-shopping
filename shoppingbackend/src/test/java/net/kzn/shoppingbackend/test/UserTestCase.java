@@ -1,5 +1,7 @@
 package net.kzn.shoppingbackend.test;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -28,8 +30,9 @@ public class UserTestCase {
 	}
 	
 	@Test
-	public void testAddUser() {
-		// setting the user
+	public void testAdd() {
+		
+		
 		user = new User() ;
 		user.setFirstName("Hrithik");
 		user.setLastName("Roshan");
@@ -38,10 +41,9 @@ public class UserTestCase {
 		user.setRole("USER");
 		user.setPassword("123456");
 		
-		// adding  the user
+		// add the user
+		assertEquals("Failed to add user!",true, userDAO.addUser(user));
 		
-		
-		// setting the billing address
 		address = new Address();
 		address.setAddressLineOne("101/B Jadoo Society, Krissh Nagar");
 		address.setAddressLineTwo("Near Kaabil Store");
@@ -50,24 +52,26 @@ public class UserTestCase {
 		address.setCountry("India");
 		address.setPostalCode("400001");
 		address.setBilling(true);
-		// linking address with user through user id
+		
+		// link the user with the address using user id
 		address.setUserId(user.getId());
 		
-		// adding the billing address
+		// add the address
+		assertEquals("Failed to add address!",true, userDAO.addAddress(address));
+
 		
-		
-		// setting up the cart and shipping address if user is USER
 		if(user.getRole().equals("USER")) {
 			
-			// setting the cart
+			// create a cart for this user
 			cart = new Cart();
-			//linking cart with user through user id
 			cart.setUserId(user.getId());
+
+			// add the cart
+			assertEquals("Failed to add cart!",true, userDAO.addCart(cart));
 			
-			// adding the cart 
 			
-			
-			// setting the shipping address
+			// add a shipping address for this user
+
 			address = new Address();
 			address.setAddressLineOne("201/B Jadoo Society, Kishan Kanhaiya Nagar");
 			address.setAddressLineTwo("Near Kudrat Store");
@@ -75,13 +79,23 @@ public class UserTestCase {
 			address.setState("Maharashtra");
 			address.setCountry("India");
 			address.setPostalCode("400001");
+			// set shipping to true
+			address.setShipping(true);
 			
-			// linking address with user through user id
+			// link it with the user
 			address.setUserId(user.getId());
 			
-			// adding the shipping address
+			// add the shipping address
+			assertEquals("Failed to add shipping address!",true, userDAO.addAddress(address));
+			
+			
 			
 		}
+		
+		
+		
+		
+		
 		
 		
 	}

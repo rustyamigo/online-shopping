@@ -1,16 +1,29 @@
 package net.kzn.shoppingbackend.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Address {
 	/*
 	 * private fields
 	 * */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(name = "user_id")
 	private int userId;
+	@Column(name = "address_line_one")	
 	private String addressLineOne;
+	@Column(name = "address_line_two")	
 	private String addressLineTwo;
 	private String city;
 	private String state;
 	private String country;
+	@Column(name = "postal_code")		
 	private String postalCode;
 	private boolean shipping;
 	private boolean billing;
