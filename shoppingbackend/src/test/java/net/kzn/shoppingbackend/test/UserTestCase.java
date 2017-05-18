@@ -119,7 +119,7 @@ public class UserTestCase {
 		
 	*/
 	
-	@Test
+/*	@Test
 	public void testUpdateCart() {
 		
 		// fetch the user by its email
@@ -136,9 +136,98 @@ public class UserTestCase {
 		
 		
 	}
+	*/
+	
+/*	@Test
+	public void testAddAddress() {
+		
+		// we need to add an user
+		user = new User() ;
+		user.setFirstName("Hrithik");
+		user.setLastName("Roshan");
+		user.setEmail("hr@gmail.com");
+		user.setContactNumber("1234512345");
+		user.setRole("USER");
+		user.setPassword("123456");
+		
+		// add the user
+		assertEquals("Failed to add user!",true, userDAO.addUser(user));
+	
+		
+		// we are going to add the address
+		
+		address = new Address();
+		address.setAddressLineOne("101/B Jadoo Society, Krissh Nagar");
+		address.setAddressLineTwo("Near Kaabil Store");
+		address.setCity("Mumbai");
+		address.setState("Maharashtra");
+		address.setCountry("India");
+		address.setPostalCode("400001");
+		address.setBilling(true);	
+		
+		// attached the user to the address
+		address.setUser(user);
+		
+		assertEquals("Failed to add address!", true, userDAO.addAddress(address));
+		
+		
+		// we are also going to add the shipping address
+		address = new Address();
+		address.setAddressLineOne("201/B Jadoo Society, Kishan Kanhaiya Nagar");
+		address.setAddressLineTwo("Near Kudrat Store");
+		address.setCity("Mumbai");
+		address.setState("Maharashtra");
+		address.setCountry("India");
+		address.setPostalCode("400001");
+		// set shipping to true
+		address.setShipping(true);
+		
+		// attached the user to the address
+		address.setUser(user);
+		
+		assertEquals("Failed to add shipping address!", true, userDAO.addAddress(address));
+		
+		
+	}
+	*/
+/*	
+	@Test
+	public void testAddAddress() {
+		
+		user = userDAO.getByEmail("hr@gmail.com");
+		
+		// we are also going to add the shipping address
+		address = new Address();
+		address.setAddressLineOne("301/B Jadoo Society, Kishan Kanhaiya Nagar");
+		address.setAddressLineTwo("Near Kudrat Store");
+		address.setCity("Bangalore");
+		address.setState("Karnataka");
+		address.setCountry("India");
+		address.setPostalCode("400001");
+		// set shipping to true
+		address.setShipping(true);
+		
+		// attached the user to the address
+		address.setUser(user);
+		
+		assertEquals("Failed to add shipping address!", true, userDAO.addAddress(address));		
+		
+		
+	}
+	*/
 	
 	
-	
+	@Test
+	public void testGetAddresses() {
+		
+		user = userDAO.getByEmail("hr@gmail.com");
+
+		assertEquals("Failed to fetch the list of address and size does not match!",2, 
+				userDAO.listShippingAddresses(user.getId()).size());
+		
+		assertEquals("Failed to fetch the billing address and size does not match!","Mumbai", 
+				userDAO.getBillingAddress(user.getId()).getCity());		
+	}
 	
 	
 }
