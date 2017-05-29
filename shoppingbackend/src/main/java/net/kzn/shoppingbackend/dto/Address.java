@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Address implements Serializable {
 	/**
@@ -32,17 +34,30 @@ public class Address implements Serializable {
 		this.userId = userId;
 	}
 
-	@Column(name = "address_line_one")	
+	@Column(name = "address_line_one")
+	@NotBlank(message = "Please enter address line one!")
 	private String addressLineOne;
+	
 	@Column(name = "address_line_two")	
+	@NotBlank(message = "Please enter address line two!")
 	private String addressLineTwo;
+
+	@NotBlank(message = "Please enter city name!")
 	private String city;
+
+	@NotBlank(message = "Please enter state name!")
 	private String state;
+	
+	@NotBlank(message = "Please enter country!")
 	private String country;
-	@Column(name = "postal_code")		
+	
+	@Column(name = "postal_code")
+	@NotBlank(message = "Please enter postal code!")	
 	private String postalCode;
+	
 	@Column(name = "is_shipping")
 	private boolean shipping;
+	
 	@Column(name = "is_billing")
 	private boolean billing;
 	
