@@ -12,10 +12,12 @@
 	
 	<context:component-scan base-package="net.kzn.shoppingbackend"/>
 	
+	<http pattern="/resources/**" security="none"/>
 	
 	<http>
+		<intercept-url pattern="/login" access="permitAll" />
 		<intercept-url pattern="/**" access="hasAuthority('USER')" />
-		<form-login />
+		<form-login login-page="/login" />
 		<logout />
 	</http>
 	
