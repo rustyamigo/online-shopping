@@ -38,6 +38,9 @@
                     <li id="login">
                         <a href="${contextRoot}/login">Login</a>
                     </li>            
+                    <li id="logout">
+                        <a href="${contextRoot}/perform_logout">Logout</a>
+                    </li>                  
                 
                 </ul>
                 
