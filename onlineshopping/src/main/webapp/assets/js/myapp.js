@@ -108,7 +108,14 @@ $(function() {
 			        		  }
 			        		  else {
 			        			  
-			        			  str += '<a href="'+window.contextRoot+ '/cart/add/'+data+'/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';  
+			        			  if(userRole == 'ADMIN') {
+				        			  str += '<a href="'+window.contextRoot+ '/manage/'+data+'/product" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>';  
+			        				  
+			        			  }else {
+				        			  str += '<a href="'+window.contextRoot+ '/cart/add/'+data+'/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';  
+			        				  			        				  
+			        			  }
+		        			  
 			        		  }
 			        		  
 			        		  			        		  
