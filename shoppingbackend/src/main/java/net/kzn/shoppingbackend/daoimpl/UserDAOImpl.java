@@ -99,9 +99,6 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	
-	
-	
-
 	@Override
 	public List<Address> listShippingAddresses(int userId) {
 		String selectQuery = "FROM Address WHERE userId = :userId AND shipping = :shipping";
