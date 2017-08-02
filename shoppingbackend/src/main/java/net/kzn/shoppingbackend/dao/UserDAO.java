@@ -3,7 +3,6 @@ package net.kzn.shoppingbackend.dao;
 import java.util.List;
 
 import net.kzn.shoppingbackend.dto.Address;
-import net.kzn.shoppingbackend.dto.Cart;
 import net.kzn.shoppingbackend.dto.User;
 
 public interface UserDAO {
@@ -23,6 +22,5 @@ public interface UserDAO {
 	List<Address> listShippingAddresses(User user);
 */
 	
-	// udpate a cart
-	boolean updateCart(Cart cart);
+
 }

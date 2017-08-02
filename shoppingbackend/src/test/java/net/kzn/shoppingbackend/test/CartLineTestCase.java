@@ -1,6 +1,9 @@
 package net.kzn.shoppingbackend.test;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.BeforeClass;
+import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import net.kzn.shoppingbackend.dao.CartLineDAO;
@@ -38,5 +41,47 @@ public class CartLineTestCase {
 				
 	}	
 		
+	@Test
+	public void testAddNewCartLine() {
+		
+		// 1. get the user
+		user = userDAO.getByEmail("absr@gmail.com");
+		
+		// 2. fetch the cart
+		cart = user.getCart();
+		
+		// 3. get the product
+		product = productDAO.get(1);
+		
+		// 4. create a new cartline
+		cartLine = new CartLine();
+		
+		cartLine.setBuyingPrice(product.getUnitPrice());
+		
+		cartLine.setProductCount(cartLine.getProductCount() + 1);
+		
+		cartLine.setTotal(cartLine.getProductCount() * product.getUnitPrice());
+		
+		cartLine.setAvailable(true);
+		
+		cartLine.setCartId(cart.getId());
+
+		cartLine.setProduct(product);
+		
+		assertEquals("Failed to add the cartLine", true, cartLineDAO.add(cartLine));
+		
+		// update the cart
+		cart.setGrandTotal(cart.getGrandTotal() + cartLine.getTotal());
+		cart.setCartLines(cart.getCartLines() + 1);
+		assertEquals("Failed to update the cart", true, cartLineDAO.updateCart(cart));
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
