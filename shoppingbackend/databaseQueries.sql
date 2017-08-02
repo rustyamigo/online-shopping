@@ -105,6 +105,7 @@ CREATE TABLE cart_line (
 	product_count int,
 	buying_price DECIMAL(10,2),
 	is_available boolean,
+	CONSTRAINT fk_cartline_cart_id FOREIGN KEY (cart_id) REFERENCES cart (id),
 	CONSTRAINT fk_cartline_product_id FOREIGN KEY (product_id) REFERENCES product (id),
 	CONSTRAINT pk_cartline_id PRIMARY KEY (id)
 );
