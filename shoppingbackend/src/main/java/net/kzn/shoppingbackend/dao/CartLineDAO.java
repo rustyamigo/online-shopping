@@ -5,7 +5,7 @@ import java.util.List;
 import net.kzn.shoppingbackend.dto.CartLine;
 
 public interface CartLineDAO {
-	// the basic and common methods	
+	// the common methods from previously coded one
 	public CartLine get(int id);	
 	public boolean add(CartLine cartLine);
 	public boolean update(CartLine cartLine);
