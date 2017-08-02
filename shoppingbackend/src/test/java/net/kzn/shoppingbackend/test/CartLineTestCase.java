@@ -37,9 +37,6 @@ public class CartLineTestCase {
 		cartLineDAO = (CartLineDAO)context.getBean("cartLineDAO");
 				
 	}	
-	
-	
-	
-	
+		
 	
 }
