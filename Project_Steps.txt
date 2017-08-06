@@ -2873,11 +2873,11 @@ TO BE CONTINUED - Part 08 - 03 - Creating a Service Layer for Cart
 
 2. We will create a method that will fetch the cart of the user from the session.
 
-3. Another method to fetch the cart lines from the database.
+3. Another method to fetch the cart lines using the cart line dao.
 
 4. Update the controller to use the newly created CartService.
 
-4. Update the cart.jsp table element to display the cartLine content.
+5. Update the cart.jsp table element to display the cartLine content.
 
 TO BE CONTINUED - Part 08 - 04 - Updating CartLine Product Count
 
