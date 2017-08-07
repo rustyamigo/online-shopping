@@ -2881,3 +2881,201 @@ TO BE CONTINUED - Part 08 - 03 - Creating a Service Layer for Cart
 
 TO BE CONTINUED - Part 08 - 04 - Updating CartLine Product Count
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|-----------------------------------------------------------------
+| Complete Project Step By Step with 
+| Spring, Hibernate, Maven, Angular JS and Bootstrap
+| - Khozema Nullwala
+|-----------------------------------------------------------------
+
+|-----------------------------------------------------------------
+| Part 08 - Cart Module for User
+|-----------------------------------------------------------------
+
+|--------------------------------------------------------------------
+| 04 - Updating CartLine Product Count jQuery.
+|--------------------------------------------------------------------
+
+1. Update the product count input field by adding id and not allowing user to increase count to more than 3 of similar product.
+
+2. Update the refresh button to handle the update of product count. 
+
+3. Handle the button click event through jQuery.
+
+/cart/{cartLineId}/update?count=1|2|3
+
+TO BE CONTINUED - Part 08 - 05 - CartLine Update through CartService.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|-----------------------------------------------------------------
+| Complete Project Step By Step with 
+| Spring, Hibernate, Maven, Angular JS and Bootstrap
+| - Khozema Nullwala
+|-----------------------------------------------------------------
+
+|-----------------------------------------------------------------
+| Part 08 - Cart Module for User
+|-----------------------------------------------------------------
+
+|--------------------------------------------------------------------
+| 05 - CartLine Update through CartService.
+|--------------------------------------------------------------------
+
+1. Handle the request submitted by the user in the CartController through the url which has been used in the jQuery i.e. 
+					/cart/{cartLineId}/update?count=value 
+
+2. Add the method in the cart service class to handle the update of product count.
+
+3. Update the cart controller show method to handle the response by cart service.
+
+4. Update the cart.jsp page to display the message.
+
+
+TO BE CONTINUED - Part 08 - 06 - Removing the CartLine
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|-----------------------------------------------------------------
+| Complete Project Step By Step with 
+| Spring, Hibernate, Maven, Angular JS and Bootstrap
+| - Khozema Nullwala
+|-----------------------------------------------------------------
+
+|-----------------------------------------------------------------
+| Part 08 - Cart Module for User
+|-----------------------------------------------------------------
+
+|--------------------------------------------------------------------
+| 06 - Removing the CartLine
+|--------------------------------------------------------------------
+
+1. Update the button to an anchor tag in cart.jsp that will handle the deletion of cartline.
+
+2. Based on the url write a method inside the CartController to handle it.
+
+3. Write a method inside the CartService class to handle deletion of cart line.
+
+4. Handle the response given back by the cart line in the showCart method. 
+
+TO BE CONTINUED - Part 08 - 07 - Adding new item to the CartLine
+
+
+
+
+
+
+
+
+
+
