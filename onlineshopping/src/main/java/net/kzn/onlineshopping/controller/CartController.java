@@ -16,17 +16,13 @@ public class CartController {
 	
 	@RequestMapping("/show")
 	public ModelAndView showCart() {
-		
-		ModelAndView mv = new ModelAndView("page");
-		
+		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title", "User Cart");
 		mv.addObject("userClickShowCart", true);
-		mv.addObject("cartLines", cartService.getCartLines());
-		
-		return mv;
-		
-		
+		mv.addObject("cartLines", cartService.getCartLines());		
+		return mv;		
 	}
+	
 	
 	
 }
