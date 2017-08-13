@@ -3069,3 +3069,51 @@ TO BE CONTINUED - Part 08 - 06 - Removing the CartLine
 4. Handle the response given back by the cart line in the showCart method. 
 
 TO BE CONTINUED - Part 08 - 07 - Adding new item to the CartLine
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|-----------------------------------------------------------------
+| Complete Project Step By Step with 
+| Spring, Hibernate, Maven, Angular JS and Bootstrap
+| - Khozema Nullwala
+|-----------------------------------------------------------------
+
+|-----------------------------------------------------------------
+| Part 08 - Cart Module for User
+|-----------------------------------------------------------------
+
+|--------------------------------------------------------------------
+| 07 - Adding New CartLine Case One 
+|--------------------------------------------------------------------
+
+				   When the product is not there inside cart.
+				
+1. Add a request mapping inside the CartController with the following url that we have already used in our project
+
+							/add/{productId}/product
+
+2. Create a method inside the CartService class to add that product inside the CartLine.
+
+		
+	
+
+3. Handle the response in the showCart method of CartController.
+
+4. Update the url to continue with the shopping
+
+
+TO BE CONTINUED - Part 08 - 08 - Adding CartLine Case Two
+
+
+
