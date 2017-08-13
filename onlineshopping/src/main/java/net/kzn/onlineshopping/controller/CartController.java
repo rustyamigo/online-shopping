@@ -19,22 +19,19 @@ public class CartController {
 	@RequestMapping("/show")
 	public ModelAndView showCart(@RequestParam(name = "result", required=false)String result) {
 		ModelAndView mv = new ModelAndView("page");
-		
-		
 		if(result!=null) {
-			
 			switch(result) {
-			
 			case "updated":
 					mv.addObject("message", "CartLine has been updated successfully!");
 					break;
+			case "deleted":
+				mv.addObject("message", "CartLine has been removed successfully!");
+				break;					
 			case "error":
 				mv.addObject("message", "Something went wrong!");
 				break;			
 			}
-			
 		}
-		
 		mv.addObject("title", "User Cart");
 		mv.addObject("userClickShowCart", true);
 		mv.addObject("cartLines", cartService.getCartLines());		
@@ -47,7 +44,13 @@ public class CartController {
 		return "redirect:/cart/show?"+response;
 		
 	}
-	
+		
+	@RequestMapping("/{cartLineId}/delete")
+	public String updateCart(@PathVariable int cartLineId) {		
+		String response = cartService.deleteCartLine(cartLineId);		
+		return "redirect:/cart/show?"+response;
+		
+	}
 	
 	
 }

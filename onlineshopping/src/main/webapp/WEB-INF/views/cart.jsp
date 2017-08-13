@@ -52,7 +52,7 @@
 			<td data-th="Subtotal" class="text-center">&#8377; ${cartLine.total}</td>
 			<td class="actions" data-th="">
 				<button type="button" name="refreshCart" value="${cartLine.id}" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-refresh"></span></button>
-				<button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>								
+				<a href="${contextRoot}/cart/${cartLine.id}/delete" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>								
 			</td>
 		</tr>
 		

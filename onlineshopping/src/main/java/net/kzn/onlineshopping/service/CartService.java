@@ -18,16 +18,12 @@ public class CartService {
 
 	@Autowired
 	private CartLineDAO cartLineDAO;
-	
-	
 	@Autowired
 	private HttpSession session;
 	
 	// returns the cart of the user who has logged in
 	private Cart getCart() {
-		
 		return ((UserModel)session.getAttribute("userModel")).getCart();
-		
 	}
 	
 	// returns the entire cart lines
@@ -36,15 +32,13 @@ public class CartService {
 	}
 
 	public String updateCartLine(int cartLineId, int count) {
-
 		// fetch the cart line
 		CartLine cartLine = cartLineDAO.get(cartLineId);
 		
 		if(cartLine == null) {
 			return "result=error";
 		}
-		else {
-			
+		else {			
 			Product product = cartLine.getProduct();
 			double oldTotal = cartLine.getTotal();
 			if(product.getQuantity() <= count) {
@@ -60,14 +54,28 @@ public class CartService {
 			
 			return "result=updated";
 		}
+	
+	}
+
+	public String deleteCartLine(int cartLineId) {
+
+		// fetch the cartline
+		CartLine cartLine = cartLineDAO.get(cartLineId);
 		
-	
-	
-	
-	
-	
-	
-	
+		if(cartLine == null) {
+			return "result=error";
+		}
+		else {
+			// update the cart
+			Cart cart = this.getCart();
+			cart.setGrandTotal(cart.getGrandTotal() - cartLine.getTotal());
+			cart.setCartLines(cart.getCartLines() - 1);
+			cartLineDAO.updateCart(cart);
+			// remove the cart line
+			cartLineDAO.delete(cartLine);
+			
+			return "result=deleted";			
+		}
 	}
 	
 }

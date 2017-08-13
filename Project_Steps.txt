@@ -3069,13 +3069,3 @@ TO BE CONTINUED - Part 08 - 06 - Removing the CartLine
 4. Handle the response given back by the cart line in the showCart method. 
 
 TO BE CONTINUED - Part 08 - 07 - Adding new item to the CartLine
-
-
-
-
-
-
-
-
-
-
