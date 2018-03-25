@@ -378,7 +378,6 @@ $(function() {
 		
 		// work only when the count has changed
 		if(currentCount !== originalCount) {
-			
 			if(currentCount < 1 || currentCount > 3) {
 				// reverting back to the original count
 				// user has given value below 1 and above 3
@@ -390,28 +389,12 @@ $(function() {
 				});
 			}
 			else {
-				
 				var updateUrl = window.contextRoot + '/cart/' + cartLineId + '/update?count=' + currentCount;
 				// forward it to the controller
 				window.location.href = updateUrl;
-				
 			}
-			
-			
-			
 		}
-		
-		
-		
-		
-		
 	});
-	
-	
-	
-	
-	
-	
 	//-----------------
 	
 });
